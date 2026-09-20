@@ -1,0 +1,32 @@
+# 本机开发配置模板：复制为 application-dev.yaml 后填入真实值（该文件已忽略提交）。
+# cp src/main/resources/application-example.yaml src/main/resources/application-dev.yaml
+# 应用行为、业务参数等共享配置在 application.yaml，不需要在这里重复。
+spring:
+  ai:
+    openai:
+      # 兼容 OpenAI 协议的服务地址，示例值为阿里云百炼 compatible-mode。
+      base-url:
+      api-key: YOUR_API_KEY
+      max-retries: 0
+      # 批量字幕生成可能超过默认的 60 秒；可用 SPRING_AI_OPENAI_TIMEOUT 覆盖。
+      timeout: 5m
+      chat:
+        model: your-chat-model
+        temperature: 0.1
+  datasource:
+    url: jdbc:mysql://localhost:3306/subtitle_extractor?createDatabaseIfNotExist=true&characterEncoding=UTF-8&connectionTimeZone=UTC
+    username: your-db-user
+    password: your-db-password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+xxl:
+  job:
+    enabled: true
+    admin-addresses: http://127.0.0.1:9090
+    access-token: your-xxl-job-access-token
+    app-name: subtitle-extractor-executor
+    address:
+    ip: 127.0.0.1
+    port: 9997
+    log-path: ./logs/xxl-job
+    log-retention-days: 30

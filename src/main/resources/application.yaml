@@ -1,0 +1,43 @@
+# 共享配置：应用行为与业务参数，不含环境相关的地址、口令。
+# 默认启用 dev profile，本机环境相关的配置在 application-dev.yaml（已忽略提交）。
+# 新环境：cp src/main/resources/application-example.yaml src/main/resources/application-dev.yaml 后填值。
+spring:
+  profiles:
+    active: example
+  ai:
+    # 启用的模型类型属于应用设计，端点地址与密钥才是环境相关配置（见 application-dev.yaml）。
+    model:
+      chat: openai
+      embedding: none
+      image: none
+      moderation: none
+      audio:
+        speech: none
+        transcription: none
+  application:
+    name: subtitle-extractor
+  main:
+    keep-alive: true
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: never
+  # 业务表和 Batch 元数据由 Flyway 统一迁移。
+  flyway:
+    locations: classpath:db/migration/mysql
+
+subtitle:
+  persistence:
+    pipeline-version: v1
+    rerun-version: default
+  batch:
+    simplified-markers: [chs, sc, zh-cn, zh-hans, 简, 简体]
+    traditional-markers: [cht, tc, zh-tw, zh-hant, 繁, 繁体]
+
+logging:
+  level:
+    root: INFO
+    com.github.anicmv: INFO
+  file:
+    name: ./logs/subtitle-extractor.log

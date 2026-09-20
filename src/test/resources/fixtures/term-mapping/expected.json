@@ -1,0 +1,358 @@
+{
+  "fixture_version": 1,
+  "origin": "synthetic_engineering_examples",
+  "position_base": 1,
+  "source_locale": "UNKNOWN",
+  "target_locale": "UNKNOWN",
+  "cases": [
+    {
+      "id": "01-orthographic",
+      "purpose": "字形映射，保留完整词语",
+      "simplified_file": "01-orthographic/01-orthographic.chs.srt",
+      "traditional_file": "01-orthographic/01-orthographic.cht.srt",
+      "simplified_cue_count": 1,
+      "traditional_cue_count": 1,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "学习",
+              "traditional": "學習",
+              "type": "ORTHOGRAPHIC",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "02-regional",
+      "purpose": "地区词汇，不能从 cht 文件名推断地区",
+      "simplified_file": "02-regional/02-regional.chs.srt",
+      "traditional_file": "02-regional/02-regional.cht.srt",
+      "simplified_cue_count": 2,
+      "traditional_cue_count": 2,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "软件",
+              "traditional": "軟體",
+              "type": "REGIONAL",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        },
+        {
+          "simplified_positions": [
+            2
+          ],
+          "traditional_positions": [
+            2
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "鼠标",
+              "traditional": "滑鼠",
+              "type": "REGIONAL",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "03-proper-name",
+      "purpose": "同一角色地区译名，专名候选待审核",
+      "simplified_file": "03-proper-name/03-proper-name.chs.srt",
+      "traditional_file": "03-proper-name/03-proper-name.cht.srt",
+      "simplified_cue_count": 1,
+      "traditional_cue_count": 1,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "赫敏",
+              "traditional": "妙麗",
+              "type": "PROPER_NAME",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "04-ignore",
+      "purpose": "相同、标点、标签/空白差异不抽取；简体文件带 UTF-8 BOM",
+      "simplified_file": "04-ignore/04-ignore.chs.srt",
+      "traditional_file": "04-ignore/04-ignore.cht.srt",
+      "simplified_cue_count": 3,
+      "traditional_cue_count": 3,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "skip_identical",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            2
+          ],
+          "traditional_positions": [
+            2
+          ],
+          "status": "skip_punctuation",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            3
+          ],
+          "traditional_positions": [
+            3
+          ],
+          "status": "skip_formatting",
+          "mappings": []
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "05-uncertain",
+      "purpose": "时间相同但不同译稿语义冲突，不能造词语关系",
+      "simplified_file": "05-uncertain/05-uncertain.chs.srt",
+      "traditional_file": "05-uncertain/05-uncertain.cht.srt",
+      "simplified_cue_count": 1,
+      "traditional_cue_count": 1,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "uncertain",
+          "mappings": []
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "06-time-offset",
+      "purpose": "三个可靠锚点，全局繁体延后 2 秒",
+      "simplified_file": "06-time-offset/06-time-offset.chs.srt",
+      "traditional_file": "06-time-offset/06-time-offset.cht.srt",
+      "simplified_cue_count": 4,
+      "traditional_cue_count": 4,
+      "expected_offset_ms": 2000,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "skip_identical",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            2
+          ],
+          "traditional_positions": [
+            2
+          ],
+          "status": "skip_identical",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            3
+          ],
+          "traditional_positions": [
+            3
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "再见",
+              "traditional": "再見",
+              "type": "ORTHOGRAPHIC",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        },
+        {
+          "simplified_positions": [
+            4
+          ],
+          "traditional_positions": [
+            4
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "软件",
+              "traditional": "軟體",
+              "type": "REGIONAL",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "07-split-merge",
+      "purpose": "一对多、多对一；双方编号跳号，不按编号连接",
+      "simplified_file": "07-split-merge/07-split-merge.chs.srt",
+      "traditional_file": "07-split-merge/07-split-merge.cht.srt",
+      "simplified_cue_count": 3,
+      "traditional_cue_count": 3,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1,
+            2
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "安装",
+              "traditional": "安裝",
+              "type": "ORTHOGRAPHIC",
+              "review_status": "PENDING_REVIEW"
+            },
+            {
+              "simplified": "软件",
+              "traditional": "軟體",
+              "type": "REGIONAL",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        },
+        {
+          "simplified_positions": [
+            2,
+            3
+          ],
+          "traditional_positions": [
+            3
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "鼠标",
+              "traditional": "滑鼠",
+              "type": "REGIONAL",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [],
+      "unaligned_traditional_positions": []
+    },
+    {
+      "id": "08-unaligned",
+      "purpose": "前三条可靠对应，第四条属于不相交的剪辑片段；同条数不可强配",
+      "simplified_file": "08-unaligned/08-unaligned.chs.srt",
+      "traditional_file": "08-unaligned/08-unaligned.cht.srt",
+      "simplified_cue_count": 4,
+      "traditional_cue_count": 4,
+      "expected_offset_ms": 0,
+      "units": [
+        {
+          "simplified_positions": [
+            1
+          ],
+          "traditional_positions": [
+            1
+          ],
+          "status": "skip_identical",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            2
+          ],
+          "traditional_positions": [
+            2
+          ],
+          "status": "skip_identical",
+          "mappings": []
+        },
+        {
+          "simplified_positions": [
+            3
+          ],
+          "traditional_positions": [
+            3
+          ],
+          "status": "mapped",
+          "mappings": [
+            {
+              "simplified": "再见",
+              "traditional": "再見",
+              "type": "ORTHOGRAPHIC",
+              "review_status": "PENDING_REVIEW"
+            }
+          ]
+        }
+      ],
+      "unaligned_simplified_positions": [
+        4
+      ],
+      "unaligned_traditional_positions": [
+        4
+      ]
+    }
+  ]
+}
